@@ -5,12 +5,7 @@ class Solution {
         {
             mp.put(s.charAt(i),mp.getOrDefault(s.charAt(i),0)+1);
         }
-        int target = mp.get(s.charAt(0));
-        for(int freq:mp.values())
-        {
-            if(freq!=target)
-            return false;
-        }
-        return true;
+        HashSet<Integer> set=new HashSet<>(mp.values());
+        return set.size()==1;
     }
 }

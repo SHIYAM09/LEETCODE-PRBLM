@@ -5,9 +5,10 @@ class Solution {
         {
             mp.put(s.charAt(i),mp.getOrDefault(s.charAt(i),0)+1);
         }
-        for(int i=0;i<s.length()-1;i++)
+        int target = mp.get(s.charAt(0));
+        for(int freq:mp.values())
         {
-            if(!mp.get(s.charAt(i)).equals (mp.get(s.charAt(i+1))))
+            if(freq!=target)
             return false;
         }
         return true;
